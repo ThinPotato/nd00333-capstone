@@ -1,5 +1,5 @@
 import argparse
-from azure.data.dataset_factory import TabularDatasetFactory
+from azureml.data.dataset_factory import TabularDatasetFactory
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from azureml.core.run import Run
@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--C' type=float, default=1.0, help="")
+    parser.add_argument('--C', type=float, default=1.0, help="")
     parser.add_argument('--max_iter',default=100, help="")
 
     args = parser.parse_args()
