@@ -22,9 +22,11 @@ def main():
 
     #ds = Dataset.Tabular.from_delimited_files(path = [(datastore, 'train-dataset/tabular/cleandata.csv')])
 
-    ds = Dataset.Tabular.from_delimited_files(path=['https://mlstrg233868.blob.core.windows.net/azureml-blobstore-8044eec8-5725-4250-800a-2905ee00c009/train-dataset/tabular/cleandata.csv'])
+    #ds = Dataset.Tabular.from_delimited_files(path=['https://mlstrg233868.blob.core.windows.net/azureml-blobstore-8044eec8-5725-4250-800a-2905ee00c009/train-dataset/tabular/cleandata.csv'])
 
-    df = ds.to_pandas_dataframe()
+    #df = ds.to_pandas_dataframe()
+    
+    df = pd.read_csv('../cleandata.csv')
 
     x_col = ['Avg_Sleepiness', 'People_Queried_About_Sleep', 'raw_Crashes_per_Year','Avg_Crash_Severity','Percent_Morning_Crashes','Percent_Evening_Crashes','Crashes_per_Year']
     y_col = ['State']
