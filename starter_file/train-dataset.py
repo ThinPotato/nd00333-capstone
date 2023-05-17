@@ -9,24 +9,27 @@ from sklearn.model_selection import train_test_split
 from azureml.core import Dataset
 from azureml.core import Model
 from azureml.core import Workspace
+import numpy as np
 
 def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--C', type=float, default=1.0, help="")
-    parser.add_argument('--max_iter',default=100, help="")
+    parser.add_argument('--max_iter',type=int, default=100, help="")
 
     args = parser.parse_args()
 
     run = Run.get_context()
 
-    #ds = Dataset.Tabular.from_delimited_files(path = [(datastore, 'train-dataset/tabular/cleandata.csv')])
+    run.log("Regularization Strength:", np.float(args.C))
+    run.log("Max iterations:", np.int(args.max_iter))
 
-    #ds = Dataset.Tabular.from_delimited_files(path=['https://mlstrg233868.blob.core.windows.net/azureml-blobstore-8044eec8-5725-4250-800a-2905ee00c009/train-dataset/tabular/cleandata.csv'])
 
-    #df = ds.to_pandas_dataframe()
-    
-    df = pd.read_csv('../cleandata.csv')
+    df = pd.read_csv("cleandata.csv")
+    df['Avg_Sleepiness'] = df['Avg_Sleepiness'].apply(lambda x: float(x.strip('%')))
+    df['Percent_Morning_Crashes'] = df['Percent_Morning_Crashes'].apply(lambda x: float(x.strip('%')))
+    df['Percent_Evening_Crashes'] = df['Percent_Evening_Crashes'].apply(lambda x: float(x.strip('%')))
+
 
     x_col = ['Avg_Sleepiness', 'People_Queried_About_Sleep', 'raw_Crashes_per_Year','Avg_Crash_Severity','Percent_Morning_Crashes','Percent_Evening_Crashes','Crashes_per_Year']
     y_col = ['State']
