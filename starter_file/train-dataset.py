@@ -6,6 +6,9 @@ from azureml.core.run import Run
 import joblib
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
+from azureml.core import Dataset
+from azureml.core import Model
+from azureml.core import Workspace
 
 def main():
     parser = argparse.ArgumentParser()
@@ -17,7 +20,9 @@ def main():
 
     run = Run.get_context()
 
-    ds = Dataset.Tabular.from_delimited_files(path = [(datastore, 'train-dataset/tabular/cleandata.csv')])
+    #ds = Dataset.Tabular.from_delimited_files(path = [(datastore, 'train-dataset/tabular/cleandata.csv')])
+
+    ds = Dataset.Tabular.from_delimited_files(path=['https://mlstrg233868.blob.core.windows.net/azureml-blobstore-8044eec8-5725-4250-800a-2905ee00c009/train-dataset/tabular/cleandata.csv'])
 
     df = ds.to_pandas_dataframe()
 
