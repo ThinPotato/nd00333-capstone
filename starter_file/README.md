@@ -24,7 +24,6 @@ We're using a classification task with a primary metric of accuracy attempting t
 ### Results
 My results all around were relatively dissapointing. My best autoML model only managed to get an accuracy of 0.12678. Certainly nothing too great. In the future, this could be improved by allowing the autoML to run longer. However, I think a major bottleneck is actually in my dataset itself. The % at night and % at day fields sometimes appear to contridict themselves due to being an aggregation of data. I suspect these fields are leading to issues in accuracy down the line.
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 <img width="1184" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/1b8aae69-9b74-492e-9d4e-b89226801d84">
 <img width="818" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/ac483c59-cda4-408a-8ba2-8e38ce246ce3">
 
@@ -38,13 +37,29 @@ This model performed worse than the autoML model. With a best case scenario of o
 <img width="853" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/872b0121-f160-49ba-aabe-ddda1972b743">
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+The deployed model takes the following input parameters:
+```json
+"data": [
+    {
+      "Avg_Crash_Severity": 1.0,
+      "Avg_Sleepiness": "36%",
+      "People_Queried_About_Sleep": 1000,
+      "Percent_Evening_Crashes": "50%",
+      "Percent_Morning_Crashes": "50%",
+      "raw_Crashes_per_Year": 1.0
+    }
+  ],
+  "method": "predict"
+}
+```
+
+Simply send this (filled out with whatever parameters you are interested in predicting for) and the model will return the likelyhood of a crash given these parameters.
+
+<img width="1110" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/bd4bb805-d518-4103-ab41-8304dc7e1fb1">
+
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+https://imgur.com/a/C323Vbo
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
