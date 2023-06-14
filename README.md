@@ -36,6 +36,10 @@ This model performed worse than the autoML model. With a best case scenario of o
 <img width="1185" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/fbf08f49-982a-4cab-9d57-2eb4cc5851b6">
 <img width="853" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/872b0121-f160-49ba-aabe-ddda1972b743">
 
+Best model parameters & run ID
+<img width="1177" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/f434f865-445b-4cc7-8e21-a33fd7295145">
+
+
 ## Model Deployment
 The deployed model takes the following input parameters:
 ```json
