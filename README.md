@@ -59,7 +59,8 @@ Simply send this (filled out with whatever parameters you are interested in pred
 
 
 ## Screen Recording
-https://imgur.com/a/C323Vbo
+[https://imgur.com/a/C323Vbo](https://i.imgur.com/L5i54cf.mp4)
+There is audio. Make sure it is unmuted in the top right
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
