@@ -19,10 +19,10 @@ Sleep is an often highly undervalued remedy to a variety of conditions. And to m
 The data is uploaded as a csv and referenced directly. 
 
 ## Automated ML
-We're using a classification task with a primary metric of accuracy attempting to predict the number of crashes per year based on a given state. 
+We're using a classification task with a primary metric of accuracy attempting to predict the number of crashes per year based on a given state. I used these parameters as my overall goal is being able to classify whether a particular crash as--at least in part--was due to sleepiness. Classification/accuracy autoML will try a ton of different models in order to find the best one for this particular scenario. 
 
 ### Results
-My results all around were relatively dissapointing. My best autoML model only managed to get an accuracy of 0.12678. Certainly nothing too great. In the future, this could be improved by allowing the autoML to run longer. However, I think a major bottleneck is actually in my dataset itself. The % at night and % at day fields sometimes appear to contridict themselves due to being an aggregation of data. I suspect these fields are leading to issues in accuracy down the line.
+My results all around were relatively dissapointing. My best autoML model only managed to get an accuracy of 0.12678. Certainly nothing too great. In the future, this could be improved by allowing the autoML to run longer. However, I think a major bottleneck is actually in my dataset itself. The % at night and % at day fields sometimes appear to contridict themselves due to being an aggregation of data. I suspect these fields are leading to issues in accuracy down the line. In the future, I'd want to simply my data source by removing fields where are not required or may be reducing the accuracy such as these % at night and % at day fields. Additionally, it may be interesting to experiment with other types of autoML configurations. While I expected Classification to be the best, maybe it will surprise me with other configs.
 
 <img width="1184" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/1b8aae69-9b74-492e-9d4e-b89226801d84">
 <img width="818" alt="image" src="https://github.com/ThinPotato/nd00333-capstone/assets/41706121/ac483c59-cda4-408a-8ba2-8e38ce246ce3">
